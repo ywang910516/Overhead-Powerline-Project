@@ -1,0 +1,35 @@
+##########################################################################################################
+ArcGIS Pro Processing Introduction
+##########################################################################################################
+
+1. Create Overhead Power lines Layer:
+
+1a. With powerline data in Raster data-form, transfer the raster to points and polyline for further use
+
+1b. Buffer the powerline polyline file by 10 feet to create a powerline shaped polygon for further use
+
+
+2 Create transportation network (for rescue using vehicle and lifeboats) layer
+
+2a. Create the vulnerable area at each time steps during Hurricane Ida for walking/vehicle (from a Human Vulnerability model: https://doi.org/10.1029/2020WR028616)
+
+2b. Buffer transportation network polylines to polygon
+
+2c. Merge the vulnerable area at each time step with the buffered transportation network to get the available area for rescue operations
+
+
+
+3. Find inaccessible area for life boat due to overhead power lines
+
+3a. Calculate the difference (raster files) between overhead power lines elevation and the simulated flood water surface at each time step
+
+3b. Create banned zone polygon for the life boat based on the clearance distance equation using raster files in previous step
+
+
+
+4. Create new transportation network for life boat at each timestep
+
+4a. Remove inaccessible area for the life boat from the available area for rescue operations
+
+##########################################################################################################
+##########################################################################################################
