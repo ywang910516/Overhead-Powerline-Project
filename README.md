@@ -10,7 +10,7 @@ Accurate flood forecasting and efficient emergency response operations are vital
 
 This material is based upon work supported by FEMA under HMGP DR4488, the U.S. Department of Homeland Security under Grant Award 22STESE00001-03-02, and the U.S. National Science Foundation under award 2103754, . The views and conclusions contained in this document are those of the authors and should not be interpreted as necessarily representing the official policies, either expressed or implied, of the U.S. National Science Foundation and U.S. Department of Homeland Security
 
-## citation to the paper
+## Citation to the paper
 Wang, Y., Josephs, H., Duan, Z., & Gong, J. (2024). The impact of electrical hazards from overhead power lines on urban search and rescue operations during extreme flood events. International Journal of Disaster Risk Reduction, 104359.
 
 ## Repository Structure
@@ -22,14 +22,17 @@ Wang, Y., Josephs, H., Duan, Z., & Gong, J. (2024). The impact of electrical haz
 ArcGIS Pro and Python are required.
 1. Prepare the necessary software and download the required data from #Data.
 2. Using the introduction file (scripts/Processing_ArcGIS-Pro.txt), pre-process the data in ArcGIS Pro.
-3. Follow the instructions in the Network Analysis Module (found in the command lines of scripts/makeEvaRoutes.py) to perform network analysis in ArcGIS Pro.
+3. Follow the instructions in the Network Analysis Module (found in the command lines of scripts/makeEvaRoutes*.py) to perform network analysis step by step in python.
 4. Run the script FindNotRescuable.py (scripts/FindNotRescuable.py) to identify all non-rescuable houses at each time step.
 5. Run the script FindEvacuable.py (scripts/FindEvacuable.py) to identify all non-evacuable houses at each time step.
 6. Run the script Compare_cross.py (scripts/Compare_cross.py) to identify houses that are "rescuable but non-evacuable" and "evacuable but non-rescuable."
 
 | Script Name | Description | How to Run |
 | --- | --- | --- |
-| `scripts/makeEvaRoutes.py` | Script contains all functions for network analysis | use it in ArcGIS Pro |
+| `scripts/makeEvaRoutes_step2_3.py` | Dissolve vulnerability layers to one single polygon | `python3 makeEvaRoutes_step2_3.py` |
+| `scripts/makeEvaRoutes_step4.py` | Create layer that are inaccessible by any means of transportation | `python3 makeEvaRoutes_step4.py` |
+| `scripts/makeEvaRoutes_step5.py` | network analysis to find rescue routes  | `python3 makeEvaRoutes_step5.py` |
+| `scripts/makeEvaRoutes_step6.py` | network analysis to find evacuation routes  | `python3 makeEvaRoutes_step6.py` |
 | `scripts/FindNotRescuable.py` | Script to find all not-rescuable houses | `python3 FindNotRescuable.py` |
 | `scripts/FindEvacuable.py` | Script to find all not-evacuable houses | `python3 FindEvacuable.py` |
 | `scripts/Compare_cross.py` | Script to find "rescuable but non-evacuable" and "evacuable but non-rescuable" houses | `python3 Compare_cross.py` |
