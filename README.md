@@ -17,3 +17,28 @@ Wang, Y., Josephs, H., Duan, Z., & Gong, J. (2024). The impact of electrical haz
 **Data/**: Contains datasets used for analysis.
 **scripts/**: Contains scripts for data processing and analysis.
 **plot/**: Contains plots of this study
+
+## Reproduce the analysis
+ArcGIS Pro and Python are required.
+1. Prepare the necessary software and download the required data from #Data.
+2. Using the introduction file (scripts/Processing_ArcGIS-Pro.txt), pre-process the data in ArcGIS Pro.
+3. Follow the instructions in the Network Analysis Module (found in the command lines of scripts/makeEvaRoutes.py) to perform network analysis in ArcGIS Pro.
+4. Run the script FindNotRescuable.py (scripts/FindNotRescuable.py) to identify all non-rescuable houses at each time step.
+5. Run the script FindEvacuable.py (scripts/FindEvacuable.py) to identify all non-evacuable houses at each time step.
+6. Run the script Compare_cross.py (scripts/Compare_cross.py) to identify houses that are "rescuable but non-evacuable" and "evacuable but non-rescuable."
+
+| Script Name | Description | How to Run |
+| --- | --- | --- |
+| `scripts/makeEvaRoutes.py` | Script contains all functions for network analysis | use it in ArcGIS Pro |
+| `scripts/FindNotRescuable.py` | Script to find all not-rescuable houses | `python3 FindNotRescuable.py` |
+| `scripts/FindEvacuable.py` | Script to find all not-evacuable houses | `python3 FindEvacuable.py` |
+| `scripts/Compare_cross.py` | Script to find "rescuable but non-evacuable" and "evacuable but non-rescuable" houses | `python3 Compare_cross.py` |
+
+## Reproduce the figures
+| Script Name | Description | How to Run |
+| --- | --- | --- |
+| `scripts/evac-rescue-conditions.py` | Script to plot rescue and evacuation availability | `python3 evac-rescue-conditions.py` |
+| `scripts/compare_evac_rescue.py` | Script to compare rescue and evacuation availability as time-series | `python3 compare_evac_rescue.py` |
+| `scripts/plot_NoRescue_loc.py` | Script to plot spatial distribution of all non-rescuable houses | `python3 plot_NoRescue_loc.py` |
+| `scripts/powerline_overview.py` | Script to overview the heights of overhead power lines above the ground | `python3 powerline_overview.py` |
+
